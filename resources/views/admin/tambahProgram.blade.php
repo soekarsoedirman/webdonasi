@@ -15,7 +15,7 @@
         <h1>Tambah Program</h1>
     </div>
     <div>
-        <form action="{{route('program.tambahProgram')}}" method="POST">
+        <form action="{{route('program.tambahProgram')}}" method="POST" enctype="multipart/form-data">
             @csrf
             <label for="title">masukkan judul</label>
             <input type="text" name="title" required>

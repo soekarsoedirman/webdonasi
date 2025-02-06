@@ -11,7 +11,7 @@ use App\Models\Zakat;
 class ZakatController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the resource.m
      */
     public function index()
     {

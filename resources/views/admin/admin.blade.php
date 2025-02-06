@@ -32,7 +32,7 @@
         <div class="tampil-Program">
             @foreach ($blog as $blog)
             <div class="program">
-                <img src="" alt="foto program">
+                <img src="{{ asset($blog->image) }}" width="300px" alt="Gambar Program">
                 <h3>
                     <a href="{{route('program.show', $blog)}}">{{$blog->title}}</a>
                 </h3>

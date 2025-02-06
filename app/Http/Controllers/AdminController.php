@@ -51,7 +51,22 @@ class AdminController extends Controller
 
     public function tambahProgram(Request $request)
     {
-        Zakat::create($request->all());
+        $request->validate([
+            'title'   => 'required|string|max:255',
+            'image'   => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'content' => 'required|string',
+        ]);
+    
+        // Simpan gambar ke folder public/program
+        $file = $request->file('image');
+        $filename = time() . '.' . $file->getClientOriginalExtension();
+        $file->move(public_path('program'), $filename);
+    
+        // Simpan data ke database
+        $data = $request->except('image'); // Ambil semua data kecuali image
+        $data['image'] = 'program/' . $filename; // Simpan path gambar ke database
+    
+        Zakat::create($data);
         return redirect()->route('admin')->with('Program telah ditambahkan');
     }
     /**

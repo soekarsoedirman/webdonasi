@@ -11,7 +11,7 @@
     <body>
         <div class="program">
             <h1>{{$blogs->title}}</h1>
-            <img src="" alt="kosong">
+            <img src="{{ asset($blogs->image) }}" width="300px" alt="Gambar Program">
             <p>{{$blogs->content}}</p>
             <a href="{{route('donasi', $blogs)}}">donasi sekarang</a>
         </div>
