@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('program');
             $table->integer('nominal');
             $table->string('nama_donatur');
+            $table->string('metode_pembayaran');
             $table->string('alamat');
             $table->integer('telpon');
             $table->string('email');

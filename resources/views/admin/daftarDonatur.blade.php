@@ -25,6 +25,7 @@
                     <th>telpon</th>
                     <th>email</th>
                     <th>nominal</th>
+                    <th>metode bayar</th>
                     <th>hapus</th>
                 </tr>
                 @foreach ($donatur as $donatur)
@@ -36,6 +37,7 @@
                         <td><p>{{$donatur->telpon}}</p></td>
                         <td><p>{{$donatur->email}}</p></td>
                         <td><p>{{$donatur->nominal}}</p></td>
+                        <td><p>{{$donatur->metode_pembayaran}}</p></td>
                         <td>
                             <form action="{{route('hapus.donatur', $donatur)}}" method="POST">
                                 @csrf

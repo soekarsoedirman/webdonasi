@@ -41,7 +41,7 @@
                             <td><input type="number" name="telpon" value="{{$donasi->telpon}}" ></td>
                             <td><input type="email" name="email" value="{{$donasi->email}}" ></td>
                             <td><input type='number' name="nominal" value="{{$donasi->nominal}}" ></td>
-                            <td><p>{{$donasi->metode_pembayaran}}</p></td>
+                            <td><input type='number' name="metode_pembayaran" value="{{$donasi->metode_pembayaran}}" ></td>
                             <td>
                                 <input type="text" name="pesan" value="{{$donasi->pesan}}" style="display: none;">
                                 <input type="text" name="blog_id" value="{{$donasi->blog_id}}" style="display: none;">
