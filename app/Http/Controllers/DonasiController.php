@@ -9,7 +9,7 @@ use App\Models\Donasi;
 class DonasiController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the resource.m
      */
     public function index($id)
     {
@@ -30,7 +30,28 @@ class DonasiController extends Controller
      */
     public function store(Request $request, $blog)
     {
-        Donasi::create($request->all());
+        $request->validate([
+            'foto_bukti' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+    
+        // Simpan file ke dalam direktori public/donasi
+        $file = $request->file('foto_bukti');
+        $filename = time() . '.' . $file->getClientOriginalExtension();
+        $file->move(public_path('donasi'), $filename);
+    
+        // Simpan data ke database
+        Donasi::create([
+            'blog_id' => $request->blog_id,
+            'program' => $request->program,
+            'metode_pembayaran' => $request->metode_pembayaran,
+            'nominal' => $request->nominal,
+            'foto_bukti' => 'donasi/' . $filename, // Simpan path foto
+            'nama_donatur' => $request->nama_donatur,
+            'alamat' => $request->alamat,
+            'telpon' => $request->telpon,
+            'email' => $request->email,
+            'pesan' => $request->pesan,
+        ]);
         return redirect()->route('home')->with('success', 'Donasi berhasil dikirim!');
     }
 

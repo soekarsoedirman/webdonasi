@@ -11,7 +11,7 @@
     </head>
     <body>
         
-        <form action="{{route('donasi.store', $blog)}}" method="POST">
+        <form action="{{route('donasi.store', $blog)}}" method="POST" enctype="multipart/form-data">
             @csrf
             <h2>Transfer Mandiri</h2>
             <h2>Donasi Program {{$blog->title}}</h2>
@@ -27,7 +27,7 @@
             <label for="nominal">nominal</label>
             <input type="number" name="nominal" required>
             <label for="foto_bukti">bukti transfer</label>
-            <input type="text" name="foto_bukti" required>
+            <input type="file" name="foto_bukti"  required>
             <label for="nama_donatur">nama</label>
             <input type="text" name="nama_donatur" required>
             <label for="alamat">alamat</label>

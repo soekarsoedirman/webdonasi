@@ -45,7 +45,7 @@
                             <td>
                                 <input type="text" name="pesan" value="{{$donasi->pesan}}" style="display: none;">
                                 <input type="text" name="blog_id" value="{{$donasi->blog_id}}" style="display: none;">
-                                <img src="" alt="bukti tf">
+                                <img src="{{ asset($donasi->foto_bukti) }}" width="300px" alt="Bukti Transfer">
                             </td>
                             <td><button type="submit" onclick="return confirm('tambahkan data ini?')">verifikasi</button></td>
                         </form>
