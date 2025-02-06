@@ -26,14 +26,24 @@
             </select>
             <label for="nominal">nominal</label>
             <input type="number" name="nominal" required>
+
             <label for="foto_bukti">bukti transfer</label>
             <input type="file" name="foto_bukti"  required>
+            @error('foto_bukti')
+                <div style="color: red;">{{ $message }}</div>
+            @enderror
+
             <label for="nama_donatur">nama</label>
             <input type="text" name="nama_donatur" required>
             <label for="alamat">alamat</label>
             <input type="text" name="alamat" required>
+
             <label for="telpon">telpon</label>
             <input type='number' name="telpon" required>
+            @error('telpon')
+                <div style="color: red;">{{ $message }}</div>
+            @enderror
+
             <label for="email">email</label>
             <input type="email" name="email" required>
             <label for="pesan">pesan kebaikan</label>

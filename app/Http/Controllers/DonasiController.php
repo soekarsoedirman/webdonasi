@@ -32,6 +32,7 @@ class DonasiController extends Controller
     {
         $request->validate([
             'foto_bukti' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'telpon' => 'required|digits_between:9,13',
         ]);
     
         // Simpan file ke dalam direktori public/donasi
