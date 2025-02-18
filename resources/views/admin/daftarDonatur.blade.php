@@ -49,16 +49,6 @@
                 
                 @endforeach
             </table>
-                
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                
-            
         </div>
     </body>
 

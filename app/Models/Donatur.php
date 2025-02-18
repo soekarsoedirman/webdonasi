@@ -16,6 +16,7 @@ class Donatur extends Model
         'nama_donatur',
         'alamat',
         'telpon',
+        'metode_pembayaran',
         'email',
         'pesan',
         'blog_id',

@@ -15,7 +15,7 @@
         <h1>Edit Program</h1>
     </div>
     <div>
-        <form action="{{route('program.updateProgram', $blogs)}}" method="POST">
+        <form action="{{route('program.updateProgram', $blogs)}}" method="POST" enctype="multipart/form-data">
             @csrf
             <label for="title">masukkan judul</label>
             <input type="text" name="title" value="{{$blogs->title}}" required>

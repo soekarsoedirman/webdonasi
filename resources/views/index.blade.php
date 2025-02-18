@@ -30,6 +30,25 @@
             </div>
             @endforeach
         </div>
+        <div>
+            <h3>recap donasi</h3>
+            <table>
+                <tr>
+                    <td>
+                        <div>
+                            <p>jumlah donatur</p>
+                            <p>{{$donatur}}</p>
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <p>nominal terkumpul</p>
+                            <p>Rp. {{$jumlah}}</p>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </body>
 @endsection
 

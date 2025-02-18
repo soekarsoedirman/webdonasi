@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('donatur', function (Blueprint $table) {
             $table->id();
             $table->string('program');
-            $table->integer('nominal');
+            $table->unsignedBigInteger('nominal');
             $table->string('nama_donatur');
             $table->string('metode_pembayaran');
             $table->string('alamat');

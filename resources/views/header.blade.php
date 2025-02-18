@@ -7,6 +7,13 @@
             <a href="{{route('about')}}">tentang kami</a>
             <a href="{{route('dokumentasi.show')}}">Dokumentasi</a> 
             <a href="{{route('program')}}">program</a>
+            @auth
+            <div>
+                <a href="{{route('admin')}}">
+                    halaman admin
+                </a>
+            </div>
+            @endauth
         </div>
         @auth
             <div>

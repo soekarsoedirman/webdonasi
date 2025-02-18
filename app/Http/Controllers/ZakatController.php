@@ -17,10 +17,14 @@ class ZakatController extends Controller
     {
          // Contoh mengambil data dari tabel 'blogs'
          $blogs = Zakat::limit(6)->get();
+         $donatur = Donatur::count();
+         $jumlah = Donatur::sum('nominal');
+
+
 
 
          // Kirim data ke view 
-         return view('index', compact('blogs'));
+         return view('index', compact('blogs', 'donatur', 'jumlah'));
     }
 
     public function postingan(string $id)

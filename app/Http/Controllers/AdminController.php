@@ -84,9 +84,29 @@ class AdminController extends Controller
      */
     public function updateProgram(Request $request, string $id)
     {
-        $blog = Zakat::find($id);
-        $blog->update($request->all());
-        return redirect()->route('admin');
+        $request->validate([
+            'title'   => 'required|string|max:255',
+            'image'   => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Gambar tidak wajib diisi saat update
+            'content' => 'required|string',
+        ]);
+        
+        // Ambil data yang akan diperbarui
+        $data = $request->except('image');
+        
+        // Perbarui gambar jika ada yang diunggah
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $filename = time() . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('program'), $filename);
+            $data['image'] = 'program/' . $filename;
+        }
+        
+        // Temukan data berdasarkan ID dan perbarui
+        $zakat = Zakat::findOrFail($id);
+        $zakat->update($data);
+        
+        return redirect()->route('admin')->with('success', 'Program telah diperbarui');
+        
     }
 
     public function destroyProgram(string $id)
@@ -106,7 +126,7 @@ class AdminController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified resource from storage. 
      */
     
 

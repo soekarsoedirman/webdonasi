@@ -46,7 +46,7 @@ class DonasiController extends Controller
             'program' => $request->program,
             'metode_pembayaran' => $request->metode_pembayaran,
             'nominal' => $request->nominal,
-            'foto_bukti' => 'donasi/' . $filename, // Simpan path foto
+            'foto_bukti' => 'donasi/' . $filename, 
             'nama_donatur' => $request->nama_donatur,
             'alamat' => $request->alamat,
             'telpon' => $request->telpon,

@@ -35,14 +35,15 @@
                     <tr>
                         <form action="{{route('tambah.donatur', $donasi)}}" method="POST">
                             @csrf
-                            <td><input type="text" name="program" value="{{$donasi->program}}" ></td>
-                            <td><input type="text" name="nama_donatur" value="{{$donasi->nama_donatur}}" ></td>
-                            <td><input type="text" name="alamat" value="{{$donasi->alamat}}" ></td>
-                            <td><input type="number" name="telpon" value="{{$donasi->telpon}}" ></td>
-                            <td><input type="email" name="email" value="{{$donasi->email}}" ></td>
-                            <td><input type='number' name="nominal" value="{{$donasi->nominal}}" ></td>
-                            <td><input type='number' name="metode_pembayaran" value="{{$donasi->metode_pembayaran}}" ></td>
+                            <td><input type="text" name="program" value="{{$donasi->program}}" readonly></td>
+                            <td><input type="text" name="nama_donatur" value="{{$donasi->nama_donatur}}" readonly></td>
+                            <td><input type="text" name="alamat" value="{{$donasi->alamat}}" readonly></td>
+                            <td><input type="number" name="telpon" value="{{$donasi->telpon}}" readonly></td>
+                            <td><input type="email" name="email" value="{{$donasi->email}}" readonly></td>
+                            <td><input type='number' name="nominal" value="{{$donasi->nominal}}" readonly></td>
+                            <td><p>{{$donasi->metode_pembayaran}}</p></td>
                             <td>
+                                <input type="text" name="metode_pembayaran" value="{{$donasi->metode_pembayaran}}" style="display: none;">
                                 <input type="text" name="pesan" value="{{$donasi->pesan}}" style="display: none;">
                                 <input type="text" name="blog_id" value="{{$donasi->blog_id}}" style="display: none;">
                                 <img src="{{ asset($donasi->foto_bukti) }}" width="300px" alt="Bukti Transfer">
