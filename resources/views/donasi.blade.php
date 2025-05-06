@@ -1,16 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        @vite(['resources/css/donasi.css'])
-        <title>Zakat alqud</title>
-    </head>
-    <body>
-        
         <form action="{{route('donasi.store', $blog)}}" method="POST" enctype="multipart/form-data">
             @csrf
             <h2>Transfer Mandiri</h2>
@@ -50,8 +40,4 @@
             <input type="text" name="pesan" required>
             <button type="submit">submit</button>
         </form>  
-       
-        
-    </body>
-
 @endsection

@@ -22,6 +22,7 @@ export default defineConfig({
                 'resources/css/headerfooter.css',
                 'resources/css/program.css',
                 'resources/css/tambahprogram.css',
+                'resources/css/layout.css',
             ],
             refresh: true,
         }),

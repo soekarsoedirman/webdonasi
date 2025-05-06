@@ -2,15 +2,6 @@
 
 @section('content')
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        @vite(['resources/css/index.css'])
-        <title>Zakat alqud</title>
-    </head>
-    <body>
-
 
         <!-- Hapus bae nu ie -->
         <div class="utama">
@@ -38,7 +29,6 @@
         <div class="hapus">
             <h3>halo saya ikan</h3>
         </div>
-    </body>
 @endsection
 
 

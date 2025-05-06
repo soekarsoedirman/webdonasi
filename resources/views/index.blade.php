@@ -1,14 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        @vite(['resources/css/index.css'])
-        <title>Zakat alqud</title>
-    </head>
-    <body>
         <!-- Headlline pokona nu jadi sorotan lah, tenyaho aing ngarana -->
         <div class="utama">
             <h1>Sorotan atau Program Utama</h1>
@@ -49,7 +41,6 @@
                 </tr>
             </table>
         </div>
-    </body>
 @endsection
 
 
